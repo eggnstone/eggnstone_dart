@@ -32,13 +32,11 @@ void _log(String level, String message, [Object? error])
     if (useNewLogger && !_isWeb)
     {
         final String levelPadded = level.padRight(5);
-        // ignore: prefer_interpolation_to_compose_strings
-        developer.log(_dateFormat.format(DateTime.now()) + ' ' + message, name: levelPadded, error: error);
+        developer.log('${_dateFormat.format(DateTime.now())} $message', name: levelPadded, error: error);
     }
     else
     {
-        // ignore: prefer_interpolation_to_compose_strings
-        final String levelWithColonPadded = (level + ':').padRight(6);
+        final String levelWithColonPadded = '$level:'.padRight(6);
         String messageForPrint = '${_dateFormat.format(DateTime.now())} $levelWithColonPadded $message';
 
         if (logColors == 'Ansi')
