@@ -1,6 +1,6 @@
 name: eggnstone_dart
 description: A collection of Dart tools, including wrappers for logging.
-homepage: https://pub.dev/publishers/eggnstone.dev/packages
+homepage: https://github.com/eggnstone/eggnstone_dart
 
 version: 1.1.0
 
