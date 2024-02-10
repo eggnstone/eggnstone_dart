@@ -6,7 +6,7 @@ import 'package:test/test.dart';
 
 void main()
 {
-      test('ThrowAsync', () async
+    test('ThrowAsync', () async
         {
             const bool expectedOnExceptionCalled = true;
             const bool expectedOnFinallyCalled = true;

@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 void main()
 {
-      test('ThrowSync', () async
+    test('ThrowSync', () async
         {
             const bool expectedOnExceptionCalled = true;
             const bool expectedOnFinallyCalled = true;
