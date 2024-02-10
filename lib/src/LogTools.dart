@@ -21,10 +21,10 @@ void logInfo(String message)
 void logWarning(String message)
 => _log('Warn', message);
 
-void logError(String message, [Object? error])
-=> _log('Error', message, error);
+void logError(String message, [Object? error, StackTrace? stackTrace])
+=> _log('Error', message, error, stackTrace);
 
-void _log(String level, String message, [Object? error])
+void _log(String level, String message, [Object? error, StackTrace? stackTrace])
 {
     if (!isLoggerEnabled)
         return;
@@ -32,7 +32,12 @@ void _log(String level, String message, [Object? error])
     if (useNewLogger && !_isWeb)
     {
         final String levelPadded = level.padRight(5);
-        developer.log('${_dateFormat.format(DateTime.now())} $message', name: levelPadded, error: error);
+        developer.log(
+            '${_dateFormat.format(DateTime.now())} $message',
+            name: levelPadded,
+            error: error,
+            stackTrace: stackTrace
+        );
     }
     else
     {
@@ -51,25 +56,28 @@ void _log(String level, String message, [Object? error])
             {
                 case 'Debug':
                     messageForPrint = COLOR_DEBUG + messageForPrint + COLOR_RESET;
-                    break;
                 case 'Info':
                     messageForPrint = COLOR_INFO + messageForPrint + COLOR_RESET;
-                    break;
                 case 'Warn':
                     messageForPrint = COLOR_WARN + messageForPrint + COLOR_RESET;
-                    break;
                 case 'Error':
                     messageForPrint = COLOR_ERROR + messageForPrint + COLOR_RESET;
-                    break;
             }
         }
 
         // ignore: avoid_print
         print(messageForPrint);
+
         if (error != null)
         {
             // ignore: avoid_print
             print('         $error');
+        }
+
+        if (stackTrace != null)
+        {
+            // ignore: avoid_print
+            print('         $stackTrace');
         }
     }
 }

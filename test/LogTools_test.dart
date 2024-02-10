@@ -135,6 +135,7 @@ void testLogWarning()
     });
 }
 
+// TODO: tests for error and stackTrace
 void testLogError()
 {
     group('logError', ()
