@@ -42,8 +42,7 @@ class DartRunner
                     {
                         await onFinally?.call();
                     }
-                }
-                , (Object e, StackTrace stackTrace)
+                }, (Object e, StackTrace stackTrace)
                 async
                 {
                     exitCode = await onCatch?.call(e, stackTrace);

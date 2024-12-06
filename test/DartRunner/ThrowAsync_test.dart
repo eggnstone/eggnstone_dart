@@ -19,12 +19,12 @@ void main()
 
             final DartRunner runner = DartRunner(
                 mainOrThrow: mainOrThrow,
-                onCatch: (Object error, StackTrace stackTrace) async
+                onCatch: (Object error, StackTrace stackTrace)
+                async
                 {
                     actualExceptionCalled = true;
                     return null;
-                }
-                ,
+                },
                 onFinally: () async => actualFinallyCalled = true,
                 onLogDebug: logDebug,
                 onLogErrorObject: (String source, Object error, StackTrace stackTrace) async => actualLogErrorObjectCalled = true
@@ -36,6 +36,7 @@ void main()
             expect(actualFinallyCalled, equals(expectedOnFinallyCalled));
             expect(actualLogErrorObjectCalled, equals(expectedOnLogErrorObjectCalled));
 
+            // TODO: Fix this test. Behavior of runZonedGuarded has obviously changed.
             expect(actualExitCode, equals(expectedExitCode));
         }
     );
