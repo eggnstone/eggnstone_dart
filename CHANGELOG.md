@@ -1,3 +1,7 @@
+## 1.2.1
+
+* Added toJson/fromJson to Date and Time.
+
 ## 1.2.0
 
 * Added Date and Time.

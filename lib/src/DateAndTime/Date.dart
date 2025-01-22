@@ -8,11 +8,16 @@ class Date with _$Date implements Comparable<Date>
 {
     const Date._();
 
+    // ignore: invalid_annotation_target
+    @JsonSerializable(fieldRename: FieldRename.pascal)
     const factory Date({
         required int year,
         required int month,
         required int day
     }) = _Date;
+
+    factory Date.fromJson(Map<String, dynamic> json)
+    => _$DateFromJson(json);
 
     factory Date.fromDateTime(DateTime dt)
     => Date(year: dt.year, month: dt.month, day: dt.day);

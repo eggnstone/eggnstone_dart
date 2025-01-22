@@ -9,11 +9,16 @@ class Time with _$Time implements Comparable<Time>
 {
     const Time._();
 
+    // ignore: invalid_annotation_target
+    @JsonSerializable(fieldRename: FieldRename.pascal)
     const factory Time({
         required int hours,
         required int minutes,
         required int seconds
     }) = _Time;
+
+    factory Time.fromJson(Map<String, dynamic> json)
+    => _$TimeFromJson(json);
 
     factory Time.fromDateTime(DateTime d)
     => Time(hours: d.hour, minutes: d.minute, seconds: d.second); 

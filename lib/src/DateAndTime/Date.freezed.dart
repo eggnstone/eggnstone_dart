@@ -14,11 +14,18 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+Date _$DateFromJson(Map<String, dynamic> json) {
+  return _Date.fromJson(json);
+}
+
 /// @nodoc
 mixin _$Date {
   int get year => throw _privateConstructorUsedError;
   int get month => throw _privateConstructorUsedError;
   int get day => throw _privateConstructorUsedError;
+
+  /// Serializes this Date to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of Date
   /// with the given fields replaced by the non-null parameter values.
@@ -115,9 +122,13 @@ class __$$DateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
+@JsonSerializable(fieldRename: FieldRename.pascal)
 class _$DateImpl extends _Date {
   const _$DateImpl({required this.year, required this.month, required this.day})
       : super._();
+
+  factory _$DateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DateImplFromJson(json);
 
   @override
   final int year;
@@ -136,6 +147,7 @@ class _$DateImpl extends _Date {
             (identical(other.day, day) || other.day == day));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, year, month, day);
 
@@ -146,6 +158,13 @@ class _$DateImpl extends _Date {
   @pragma('vm:prefer-inline')
   _$$DateImplCopyWith<_$DateImpl> get copyWith =>
       __$$DateImplCopyWithImpl<_$DateImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DateImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _Date extends Date {
@@ -154,6 +173,8 @@ abstract class _Date extends Date {
       required final int month,
       required final int day}) = _$DateImpl;
   const _Date._() : super._();
+
+  factory _Date.fromJson(Map<String, dynamic> json) = _$DateImpl.fromJson;
 
   @override
   int get year;
