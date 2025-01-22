@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:sprintf/sprintf.dart';
 
 part 'Date.freezed.dart';
+part 'Date.g.dart';
 
 @freezed
 class Date with _$Date implements Comparable<Date>
@@ -15,9 +16,6 @@ class Date with _$Date implements Comparable<Date>
         required int month,
         required int day
     }) = _Date;
-
-    factory Date.fromJson(Map<String, dynamic> json)
-    => _$DateFromJson(json);
 
     factory Date.fromDateTime(DateTime dt)
     => Date(year: dt.year, month: dt.month, day: dt.day);

@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:sprintf/sprintf.dart';
 
 part 'Time.freezed.dart';
+part 'Time.g.dart';
 
 @freezed
 class Time with _$Time implements Comparable<Time>
@@ -16,9 +17,6 @@ class Time with _$Time implements Comparable<Time>
         required int minutes,
         required int seconds
     }) = _Time;
-
-    factory Time.fromJson(Map<String, dynamic> json)
-    => _$TimeFromJson(json);
 
     factory Time.fromDateTime(DateTime d)
     => Time(hours: d.hour, minutes: d.minute, seconds: d.second); 
