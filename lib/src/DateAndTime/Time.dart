@@ -18,6 +18,9 @@ class Time with _$Time implements Comparable<Time>
         required int seconds
     }) = _Time;
 
+    factory Time.fromJson(Map<String, dynamic> json)
+    => _$TimeFromJson(json);
+
     factory Time.fromDateTime(DateTime d)
     => Time(hours: d.hour, minutes: d.minute, seconds: d.second); 
 

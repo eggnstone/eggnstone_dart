@@ -17,6 +17,9 @@ class Date with _$Date implements Comparable<Date>
         required int day
     }) = _Date;
 
+    factory Date.fromJson(Map<String, dynamic> json)
+    => _$DateFromJson(json);
+
     factory Date.fromDateTime(DateTime dt)
     => Date(year: dt.year, month: dt.month, day: dt.day);
 

@@ -14,11 +14,18 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+Time _$TimeFromJson(Map<String, dynamic> json) {
+  return _Time.fromJson(json);
+}
+
 /// @nodoc
 mixin _$Time {
   int get hours => throw _privateConstructorUsedError;
   int get minutes => throw _privateConstructorUsedError;
   int get seconds => throw _privateConstructorUsedError;
+
+  /// Serializes this Time to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of Time
   /// with the given fields replaced by the non-null parameter values.
@@ -121,6 +128,9 @@ class _$TimeImpl extends _Time {
       {required this.hours, required this.minutes, required this.seconds})
       : super._();
 
+  factory _$TimeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TimeImplFromJson(json);
+
   @override
   final int hours;
   @override
@@ -138,6 +148,7 @@ class _$TimeImpl extends _Time {
             (identical(other.seconds, seconds) || other.seconds == seconds));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, hours, minutes, seconds);
 
@@ -148,6 +159,13 @@ class _$TimeImpl extends _Time {
   @pragma('vm:prefer-inline')
   _$$TimeImplCopyWith<_$TimeImpl> get copyWith =>
       __$$TimeImplCopyWithImpl<_$TimeImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TimeImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _Time extends Time {
@@ -156,6 +174,8 @@ abstract class _Time extends Time {
       required final int minutes,
       required final int seconds}) = _$TimeImpl;
   const _Time._() : super._();
+
+  factory _Time.fromJson(Map<String, dynamic> json) = _$TimeImpl.fromJson;
 
   @override
   int get hours;
