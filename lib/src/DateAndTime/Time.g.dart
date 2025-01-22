@@ -9,7 +9,7 @@ part of 'Time.dart';
 _$TimeImpl _$$TimeImplFromJson(Map<String, dynamic> json) => _$TimeImpl(
       hours: (json['Hours'] as num).toInt(),
       minutes: (json['Minutes'] as num).toInt(),
-      seconds: (json['Seconds'] as num).toInt(),
+      seconds: (json['Seconds'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$TimeImplToJson(_$TimeImpl instance) =>

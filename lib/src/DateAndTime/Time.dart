@@ -15,7 +15,7 @@ class Time with _$Time implements Comparable<Time>
     const factory Time({
         required int hours,
         required int minutes,
-        required int seconds
+        @Default(0) int seconds
     }) = _Time;
 
     factory Time.fromJson(Map<String, dynamic> json)

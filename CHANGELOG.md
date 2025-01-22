@@ -1,4 +1,4 @@
-## 1.2.2
+## 1.2.3
 
 * Added toJson/fromJson to Date and Time.
 

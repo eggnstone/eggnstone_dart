@@ -125,7 +125,7 @@ class __$$TimeImplCopyWithImpl<$Res>
 @JsonSerializable(fieldRename: FieldRename.pascal)
 class _$TimeImpl extends _Time {
   const _$TimeImpl(
-      {required this.hours, required this.minutes, required this.seconds})
+      {required this.hours, required this.minutes, this.seconds = 0})
       : super._();
 
   factory _$TimeImpl.fromJson(Map<String, dynamic> json) =>
@@ -136,6 +136,7 @@ class _$TimeImpl extends _Time {
   @override
   final int minutes;
   @override
+  @JsonKey()
   final int seconds;
 
   @override
@@ -172,7 +173,7 @@ abstract class _Time extends Time {
   const factory _Time(
       {required final int hours,
       required final int minutes,
-      required final int seconds}) = _$TimeImpl;
+      final int seconds}) = _$TimeImpl;
   const _Time._() : super._();
 
   factory _Time.fromJson(Map<String, dynamic> json) = _$TimeImpl.fromJson;
