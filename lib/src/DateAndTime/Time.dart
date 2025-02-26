@@ -31,7 +31,7 @@ abstract class Time with _$Time implements Comparable<Time>
     => Time(hours: (totalSeconds / 3600).round(), minutes: (totalSeconds % 3600 / 60).round(), seconds: totalSeconds % 60);
 
     factory Time.fromString(String s)
-    => Time(hours: int.parse(s.substring(0, 2)), minutes: int.parse(s.substring(2, 4)),seconds: int.parse(s.substring(4, 6)));
+    => Time(hours: int.parse(s.substring(0, 2)), minutes: int.parse(s.substring(2, 4)), seconds: int.parse(s.substring(4, 6)));
 
     @override
     String toString()

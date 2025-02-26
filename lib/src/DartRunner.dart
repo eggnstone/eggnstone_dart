@@ -64,5 +64,5 @@ class DartRunner
     => onLogDebug?.call(message);
 
     void _logErrorObject(String source, Object error, StackTrace stackTrace)
-    => onLogErrorObject?.call( source, error, stackTrace);
+    => onLogErrorObject?.call(source, error, stackTrace);
 }
