@@ -5,7 +5,7 @@ part 'Date.freezed.dart';
 part 'Date.g.dart';
 
 @freezed
-class Date with _$Date implements Comparable<Date>
+abstract class Date with _$Date implements Comparable<Date>
 {
     const Date._();
 

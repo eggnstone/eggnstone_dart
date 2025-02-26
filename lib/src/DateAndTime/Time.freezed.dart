@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,90 +10,54 @@ part of 'Time.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Time _$TimeFromJson(Map<String, dynamic> json) {
-  return _Time.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Time {
-  int get hours => throw _privateConstructorUsedError;
-  int get minutes => throw _privateConstructorUsedError;
-  int get seconds => throw _privateConstructorUsedError;
-
-  /// Serializes this Time to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get hours;
+  int get minutes;
+  int get seconds;
 
   /// Create a copy of Time
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $TimeCopyWith<Time> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TimeCopyWith<$Res> {
-  factory $TimeCopyWith(Time value, $Res Function(Time) then) =
-      _$TimeCopyWithImpl<$Res, Time>;
-  @useResult
-  $Res call({int hours, int minutes, int seconds});
-}
-
-/// @nodoc
-class _$TimeCopyWithImpl<$Res, $Val extends Time>
-    implements $TimeCopyWith<$Res> {
-  _$TimeCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Time
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $TimeCopyWith<Time> get copyWith =>
+      _$TimeCopyWithImpl<Time>(this as Time, _$identity);
+
+  /// Serializes this Time to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? hours = null,
-    Object? minutes = null,
-    Object? seconds = null,
-  }) {
-    return _then(_value.copyWith(
-      hours: null == hours
-          ? _value.hours
-          : hours // ignore: cast_nullable_to_non_nullable
-              as int,
-      minutes: null == minutes
-          ? _value.minutes
-          : minutes // ignore: cast_nullable_to_non_nullable
-              as int,
-      seconds: null == seconds
-          ? _value.seconds
-          : seconds // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Time &&
+            (identical(other.hours, hours) || other.hours == hours) &&
+            (identical(other.minutes, minutes) || other.minutes == minutes) &&
+            (identical(other.seconds, seconds) || other.seconds == seconds));
   }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, hours, minutes, seconds);
 }
 
 /// @nodoc
-abstract class _$$TimeImplCopyWith<$Res> implements $TimeCopyWith<$Res> {
-  factory _$$TimeImplCopyWith(
-          _$TimeImpl value, $Res Function(_$TimeImpl) then) =
-      __$$TimeImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $TimeCopyWith<$Res> {
+  factory $TimeCopyWith(Time value, $Res Function(Time) _then) =
+      _$TimeCopyWithImpl;
   @useResult
   $Res call({int hours, int minutes, int seconds});
 }
 
 /// @nodoc
-class __$$TimeImplCopyWithImpl<$Res>
-    extends _$TimeCopyWithImpl<$Res, _$TimeImpl>
-    implements _$$TimeImplCopyWith<$Res> {
-  __$$TimeImplCopyWithImpl(_$TimeImpl _value, $Res Function(_$TimeImpl) _then)
-      : super(_value, _then);
+class _$TimeCopyWithImpl<$Res> implements $TimeCopyWith<$Res> {
+  _$TimeCopyWithImpl(this._self, this._then);
+
+  final Time _self;
+  final $Res Function(Time) _then;
 
   /// Create a copy of Time
   /// with the given fields replaced by the non-null parameter values.
@@ -103,17 +68,17 @@ class __$$TimeImplCopyWithImpl<$Res>
     Object? minutes = null,
     Object? seconds = null,
   }) {
-    return _then(_$TimeImpl(
+    return _then(_self.copyWith(
       hours: null == hours
-          ? _value.hours
+          ? _self.hours
           : hours // ignore: cast_nullable_to_non_nullable
               as int,
       minutes: null == minutes
-          ? _value.minutes
+          ? _self.minutes
           : minutes // ignore: cast_nullable_to_non_nullable
               as int,
       seconds: null == seconds
-          ? _value.seconds
+          ? _self.seconds
           : seconds // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -123,13 +88,10 @@ class __$$TimeImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.pascal)
-class _$TimeImpl extends _Time {
-  const _$TimeImpl(
-      {required this.hours, required this.minutes, this.seconds = 0})
+class _Time extends Time {
+  const _Time({required this.hours, required this.minutes, this.seconds = 0})
       : super._();
-
-  factory _$TimeImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TimeImplFromJson(json);
+  factory _Time.fromJson(Map<String, dynamic> json) => _$TimeFromJson(json);
 
   @override
   final int hours;
@@ -139,11 +101,26 @@ class _$TimeImpl extends _Time {
   @JsonKey()
   final int seconds;
 
+  /// Create a copy of Time
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TimeCopyWith<_Time> get copyWith =>
+      __$TimeCopyWithImpl<_Time>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TimeToJson(
+      this,
+    );
+  }
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TimeImpl &&
+            other is _Time &&
             (identical(other.hours, hours) || other.hours == hours) &&
             (identical(other.minutes, minutes) || other.minutes == minutes) &&
             (identical(other.seconds, seconds) || other.seconds == seconds));
@@ -152,43 +129,48 @@ class _$TimeImpl extends _Time {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, hours, minutes, seconds);
+}
+
+/// @nodoc
+abstract mixin class _$TimeCopyWith<$Res> implements $TimeCopyWith<$Res> {
+  factory _$TimeCopyWith(_Time value, $Res Function(_Time) _then) =
+      __$TimeCopyWithImpl;
+  @override
+  @useResult
+  $Res call({int hours, int minutes, int seconds});
+}
+
+/// @nodoc
+class __$TimeCopyWithImpl<$Res> implements _$TimeCopyWith<$Res> {
+  __$TimeCopyWithImpl(this._self, this._then);
+
+  final _Time _self;
+  final $Res Function(_Time) _then;
 
   /// Create a copy of Time
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TimeImplCopyWith<_$TimeImpl> get copyWith =>
-      __$$TimeImplCopyWithImpl<_$TimeImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TimeImplToJson(
-      this,
-    );
+  $Res call({
+    Object? hours = null,
+    Object? minutes = null,
+    Object? seconds = null,
+  }) {
+    return _then(_Time(
+      hours: null == hours
+          ? _self.hours
+          : hours // ignore: cast_nullable_to_non_nullable
+              as int,
+      minutes: null == minutes
+          ? _self.minutes
+          : minutes // ignore: cast_nullable_to_non_nullable
+              as int,
+      seconds: null == seconds
+          ? _self.seconds
+          : seconds // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
   }
 }
 
-abstract class _Time extends Time {
-  const factory _Time(
-      {required final int hours,
-      required final int minutes,
-      final int seconds}) = _$TimeImpl;
-  const _Time._() : super._();
-
-  factory _Time.fromJson(Map<String, dynamic> json) = _$TimeImpl.fromJson;
-
-  @override
-  int get hours;
-  @override
-  int get minutes;
-  @override
-  int get seconds;
-
-  /// Create a copy of Time
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TimeImplCopyWith<_$TimeImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

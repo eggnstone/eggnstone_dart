@@ -6,14 +6,13 @@ part of 'Date.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DateImpl _$$DateImplFromJson(Map<String, dynamic> json) => _$DateImpl(
+_Date _$DateFromJson(Map<String, dynamic> json) => _Date(
       year: (json['Year'] as num).toInt(),
       month: (json['Month'] as num).toInt(),
       day: (json['Day'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$DateImplToJson(_$DateImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$DateToJson(_Date instance) => <String, dynamic>{
       'Year': instance.year,
       'Month': instance.month,
       'Day': instance.day,

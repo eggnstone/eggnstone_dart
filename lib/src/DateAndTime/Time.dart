@@ -6,7 +6,7 @@ part 'Time.freezed.dart';
 part 'Time.g.dart';
 
 @freezed
-class Time with _$Time implements Comparable<Time>
+abstract class Time with _$Time implements Comparable<Time>
 {
     const Time._();
 
@@ -35,7 +35,7 @@ class Time with _$Time implements Comparable<Time>
 
     @override
     String toString()
-    => sprintf('%02i%02i%02i', <int?>[hours, minutes, seconds]);
+    => sprintf('%02i%02i%02i', <int>[hours, minutes, seconds]);
 
     @override
     int compareTo(Time other)

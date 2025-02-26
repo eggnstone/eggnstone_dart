@@ -1,3 +1,7 @@
+## 1.3.0
+
+* Using freezed 3.0.0 now.
+
 ## 1.2.3
 
 * Added toJson/fromJson to Date and Time.
