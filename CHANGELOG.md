@@ -1,3 +1,7 @@
+## 1.4.0
+
+* Simplified logging.
+
 ## 1.3.0
 
 * Using freezed 3.0.0 now.
