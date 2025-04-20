@@ -5,6 +5,7 @@ import 'package:sprintf/sprintf.dart';
 part 'Time.freezed.dart';
 part 'Time.g.dart';
 
+/// A simple class to represent a time of day.
 @freezed
 abstract class Time with _$Time implements Comparable<Time>
 {

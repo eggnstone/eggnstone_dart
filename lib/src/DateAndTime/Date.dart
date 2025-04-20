@@ -4,6 +4,7 @@ import 'package:sprintf/sprintf.dart';
 part 'Date.freezed.dart';
 part 'Date.g.dart';
 
+/// A simple date class that represents a date without time zone information.
 @freezed
 abstract class Date with _$Date implements Comparable<Date>
 {
