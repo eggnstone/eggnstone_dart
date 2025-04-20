@@ -21,7 +21,7 @@ void testLogDebug()
             test('Logger not enabled => no log', ()
                 => overridePrint(loggerNotEnabledLog, ()
                     {
-                        disableLog();
+                        enableLog(false);
                         logDebug('Test');
                         expect(loggerNotEnabledLog.length, 0);
                     }
@@ -32,7 +32,7 @@ void testLogDebug()
             test('Logger enabled => log', ()
                 => overridePrint(loggerEnabledLog, ()
                     {
-                        enableLog();
+                        enableLog(true);
                         logDebug('Test');
                         expect(loggerEnabledLog.length, 1);
                     }
@@ -46,7 +46,7 @@ void testLogDebug()
                         const String MESSAGE = 'TestDebug';
                         const String ANNOTATED_MESSAGE = 'Debug: $MESSAGE';
 
-                        enableLog();
+                        enableLog(true);
                         logDebug(MESSAGE);
                         expect(RegExp('^$TIME_REGEX $ANNOTATED_MESSAGE' r'$').hasMatch(log[0]), isTrue);
                     }
@@ -64,7 +64,7 @@ void testLogInfo()
             test('Logger not enabled => no log', ()
                 => overridePrint(loggerNotEnabledLog, ()
                     {
-                        disableLog();
+                        enableLog(false);
                         logInfo('Test');
                         expect(loggerNotEnabledLog.length, 0);
                     }
@@ -75,7 +75,7 @@ void testLogInfo()
             test('Logger enabled => log', ()
                 => overridePrint(loggerEnabledLog, ()
                     {
-                        enableLog();
+                        enableLog(true);
                         logInfo('Test');
                         expect(loggerEnabledLog.length, 1);
                     }
@@ -89,7 +89,7 @@ void testLogInfo()
                         const String MESSAGE = 'TestInfo';
                         const String ANNOTATED_MESSAGE = 'Info:  $MESSAGE';
 
-                        enableLog();
+                        enableLog(true);
                         logInfo(MESSAGE);
                         expect(RegExp('^$TIME_REGEX $ANNOTATED_MESSAGE' r'$').hasMatch(log[0]), isTrue);
                     }
@@ -107,7 +107,7 @@ void testLogWarning()
             test('Logger not enabled => no log', ()
                 => overridePrint(loggerNotEnabledLog, ()
                     {
-                        disableLog();
+                        enableLog(false);
                         logWarning('Test');
                         expect(loggerNotEnabledLog.length, 0);
                     }
@@ -118,7 +118,7 @@ void testLogWarning()
             test('Logger enabled => log', ()
                 => overridePrint(loggerEnabledLog, ()
                     {
-                        enableLog();
+                        enableLog(true);
                         logWarning('Test');
                         expect(loggerEnabledLog.length, 1);
                     }
@@ -132,7 +132,7 @@ void testLogWarning()
                         const String MESSAGE = 'TestWarning';
                         const String ANNOTATED_MESSAGE = 'Warn:  $MESSAGE';
 
-                        enableLog();
+                        enableLog(true);
                         logWarning(MESSAGE);
                         expect(RegExp('^$TIME_REGEX $ANNOTATED_MESSAGE' r'$').hasMatch(log[0]), isTrue);
                     }
@@ -151,7 +151,7 @@ void testLogError()
             test('Logger not enabled => no log', ()
                 => overridePrint(loggerNotEnabledLog, ()
                     {
-                        disableLog();
+                        enableLog(false);
                         logError('Test');
                         expect(loggerNotEnabledLog.length, 0);
                     }
@@ -162,7 +162,7 @@ void testLogError()
             test('Logger enabled => log', ()
                 => overridePrint(loggerEnabledLog, ()
                     {
-                        enableLog();
+                        enableLog(true);
                         logError('Test');
                         expect(loggerEnabledLog.length, 1);
                     }
@@ -176,7 +176,7 @@ void testLogError()
                         const String MESSAGE = 'TestError';
                         const String ANNOTATED_MESSAGE = 'Error: $MESSAGE';
 
-                        enableLog();
+                        enableLog(true);
                         logError(MESSAGE);
                         expect(RegExp('^$TIME_REGEX $ANNOTATED_MESSAGE' r'$').hasMatch(log[0]), isTrue, reason: '"${log[0]}" did not match expected format.');
                     }

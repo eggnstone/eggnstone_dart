@@ -13,11 +13,9 @@ void initLog({required bool enabled, required bool isWeb})
     _isWeb = isWeb;
 }
 
-void enableLog()
-=> _isEnabled = true;
-
-void disableLog()
-=> _isEnabled = false;
+// ignore: avoid_positional_boolean_parameters
+void enableLog(bool value)
+=> _isEnabled = value;
 
 void logDebug(String message)
 => _log('Debug', message);
