@@ -23,7 +23,7 @@ void main()
                 }
                 ,
                 onFinally: () async => actualFinallyCalled = true,
-                onLogErrorObject: (String source, Object error, StackTrace stackTrace) async => actualLogErrorObjectCalled = true
+                onLogErrorObject: (String source, Object error, StackTrace stackTrace) => actualLogErrorObjectCalled = true
             );
 
             final int? actualExitCode = await runner.run(<String>[]);

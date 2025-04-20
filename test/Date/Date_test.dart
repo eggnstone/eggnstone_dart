@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 void main()
 {
-    test('Date', () async
+    test('Date', ()
         {
             const Date date = Date(year: 2000, month: 12, day: 31);
 
@@ -13,7 +13,7 @@ void main()
         }
     );
 
-    test('Date.toJson', () async
+    test('Date.toJson', ()
         {
             const Date date = Date(year: 2000, month: 12, day: 31);
 
@@ -23,7 +23,7 @@ void main()
         }
     );
 
-    test('Date.fromJson', () async
+    test('Date.fromJson', ()
         {
             final Date date = Date.fromJson(<String, int>{'Year': 2000, 'Month': 12, 'Day': 31});
 
