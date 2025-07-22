@@ -1,4 +1,5 @@
 name: eggnstone_dart
+copyright: 2020-2025 Mark Eggenstein
 description: A collection of Dart tools, including wrappers for logging.
 homepage: https://github.com/eggnstone/eggnstone_dart
 version: 1.4.1

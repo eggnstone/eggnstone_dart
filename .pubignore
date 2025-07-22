@@ -1,2 +1,9 @@
-/build
-/Publish.bat
+*.bat
+*.ps1
+/all_lint_rules.yaml
+/analysis_options.yaml
+/doc/
+/test/
+dart_package.json
+mupdate.md
+mupdate.yaml
