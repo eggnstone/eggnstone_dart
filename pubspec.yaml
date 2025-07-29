@@ -2,19 +2,19 @@ name: eggnstone_dart
 copyright: 2020-2025 Mark Eggenstein
 description: A collection of Dart tools, including wrappers for logging.
 homepage: https://github.com/eggnstone/eggnstone_dart
-version: 1.4.1
+version: 1.4.2
 
 environment:
   sdk: ^3.0.0
 
 dependencies:
-  freezed_annotation: ^3.0.0
+  freezed_annotation: ^3.1.0
   intl: ^0.20.2
   json_annotation: ^4.9.0
   sprintf: ^7.0.0
 
 dev_dependencies:
-  build_runner: ^2.4.15
-  freezed: ^3.0.6
-  json_serializable: ^6.9.5
+  build_runner: ^2.5.4 # 2.6.0 requires build/source_gen 3.0.0 which is not compatible with riverpod_generator
+  freezed: ^3.1.0 # 3.2.0 requires build/source_gen 3.0.0 which is not compatible with riverpod_generator
+  json_serializable: ^6.9.5 # 6.10.0 requires build/source_gen 3.0.0 which is not compatible with riverpod_generator
   test: any

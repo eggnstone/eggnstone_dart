@@ -1,3 +1,7 @@
+## 1.4.2
+
+Updated dependencies as far as possible while waiting for riverpod_generator.
+
 ## 1.4.1
 
 * Simplified logging.
